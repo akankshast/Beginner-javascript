@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Classes</title>
+  <link rel="stylesheet" href="../base.css">
+</head>
+
+<body>
+  <script>
+    class Pizza {
+      constructor(toppings = [], customer) {
+        
+        this.toppings = toppings;
+        this.customer = customer;
+      }
+
+      static toppings = ['pepperoni', 'cheese'];
+
+      static randomPizza() {
+        return new Pizza()
+      }
+      eat() {
+        console.log('CHOMP');
+        console.log(this.toppings);
+        console.log(this.slices);
+      }
+      slices = 10;
+      hi = () => {
+        console.log('Hiiii');
+        console.log(this);
+      }
+      get length() {
+        return this.slices;
+      }
+      #bankBalance = 10000;
+    }
+
+    const myPizza = new Pizza(['onions'], 'Wes Bos');
+
+    console.log(myPizza);
+  </script>
+</body>
+
+</html>
